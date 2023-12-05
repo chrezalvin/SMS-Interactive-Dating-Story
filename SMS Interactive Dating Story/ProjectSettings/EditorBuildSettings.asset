@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SecondFloorLayout.unity
+    guid: 4e8136b9279b1d441b30f7ba48d63379
+  - enabled: 1
+    path: Assets/Ground Floor Layout.unity
+    guid: 918d1b3a08ab8ee4f8e0e2fe85dd2a71
   m_configObjects: {}
