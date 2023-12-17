@@ -6,17 +6,21 @@ public class CameraControl : MonoBehaviour
 {
     [SerializeField] private Transform target;
     public bool debug = false;
-
-    float rotationMultiplier = 1;
-    float zoomMultiplier = 1;
+    public Vector3 m_offset = new Vector3(0, 1, -5);
+    public float rotationMultiplier = 1;
+    public float zoomMultiplier = 1;
 
     private float m_baseRotSpeed = 10f;
     private float m_baseZoomSpeed = 10f;
-    public Vector3 m_offset = new Vector3(0, 1, -5);
+
+    private float minZoom = 3f;
+    private float maxZoom = 10f;
+
+    private float zoom = 3f;
 
     private void Start()
     {
-        m_offset = transform.position - target.position;
+        zoom = Vector3.Distance(transform.position, target.position);
     }
 
     private void LateUpdate()
@@ -40,6 +44,7 @@ public class CameraControl : MonoBehaviour
         }
         if (z != 0)
         {
+            zoom = Mathf.Clamp(zoom - z * m_baseZoomSpeed * zoomMultiplier, minZoom, maxZoom);
             transform.Translate(Vector3.forward * z * m_baseZoomSpeed * zoomMultiplier);
 
             // set a new offset
