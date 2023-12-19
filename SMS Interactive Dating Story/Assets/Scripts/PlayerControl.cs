@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     [SerializeField] private GameObject camera;
-    float speed = 10f;
+    public Animator animator;
+    public float speed = 10f;
     float rotationSpeed = 5f;
 
     public bool debug = false;
@@ -27,7 +28,11 @@ public class PlayerControl : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
 
-        if (v != 0 || h != 0)
+        bool walking = v != 0 || h != 0;
+
+        animator.SetBool("isWalking", walking);
+
+        if (walking)
         {
             Vector3 NextDir = Quaternion.Euler(0, camera.transform.eulerAngles.y, 0) * new Vector3(h, 0, v);
 

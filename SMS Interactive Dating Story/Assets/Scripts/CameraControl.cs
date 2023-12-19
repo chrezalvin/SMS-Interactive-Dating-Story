@@ -33,8 +33,8 @@ public class CameraControl : MonoBehaviour
         // if mouse pressed then rotate
         if (Input.GetMouseButton(1) && (v != 0 || h != 0))
         {
-            transform.RotateAround(target.position, Vector3.up, h * m_baseRotSpeed * rotationMultiplier);
-            transform.RotateAround(target.position, Vector3.left, v * m_baseRotSpeed * rotationMultiplier);
+            transform.RotateAround(target.position, this.transform.up, h * m_baseRotSpeed * rotationMultiplier);
+            transform.RotateAround(target.position, this.transform.right, -v * m_baseRotSpeed * rotationMultiplier);
 
             // set a new offset
             m_offset = transform.position - target.position;
