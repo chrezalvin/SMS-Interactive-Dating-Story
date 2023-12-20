@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0eac9333d3f19d4fa47567a90c14f94, type: 3}
+  m_Name: Aurantia
+  m_EditorClassIdentifier: 
+  musicName: Aurantia
+  musicArtist: 'Phoenotopia: Awakening'
+  musicClip: {fileID: 8300000, guid: a22d10043722d0544a6f8413ca41db12, type: 3}
