@@ -7,5 +7,6 @@ public class DialogueLine
 {
     public string name;
     [TextArea] public string dialogue;
+    public string animationParam = "";
 
 }

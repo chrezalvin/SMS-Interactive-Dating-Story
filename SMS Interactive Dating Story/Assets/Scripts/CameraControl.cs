@@ -1,26 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CameraControl : MonoBehaviour
 {
     [SerializeField] private Transform target;
     public bool debug = false;
-    public Vector3 m_offset = new Vector3(0, 1, -5);
+    public Vector3 m_offset = new Vector3(0, 1, 5);
     public float rotationMultiplier = 1;
     public float zoomMultiplier = 1;
 
-    private float m_baseRotSpeed = 10f;
-    private float m_baseZoomSpeed = 10f;
+    public float m_baseRotSpeed = 10f;
+    public float m_baseZoomSpeed = 10f;
 
-    private float minZoom = 3f;
-    private float maxZoom = 10f;
+    public float minZoom = 1f;
+    public float maxZoom = 10f;
+
+    private Transform refPoint;
 
     private float zoom = 3f;
 
     private void Start()
     {
-        zoom = Vector3.Distance(transform.position, target.position);
+        refPoint = new GameObject().transform;
+        refPoint.position = m_offset;
     }
 
     private void LateUpdate()
@@ -33,11 +37,8 @@ public class CameraControl : MonoBehaviour
         // if mouse pressed then rotate
         if (Input.GetMouseButton(1) && (v != 0 || h != 0))
         {
-            transform.RotateAround(target.position, this.transform.up, h * m_baseRotSpeed * rotationMultiplier);
-            transform.RotateAround(target.position, this.transform.right, -v * m_baseRotSpeed * rotationMultiplier);
-
-            // set a new offset
-            m_offset = transform.position - target.position;
+            refPoint.RotateAround(Vector3.zero, this.transform.up, h * m_baseRotSpeed * rotationMultiplier);
+            refPoint.RotateAround(Vector3.zero, this.transform.right, -v * m_baseRotSpeed * rotationMultiplier);
 
             if (debug)
                 Debug.Log("Camera rotated to: " + transform.rotation.eulerAngles);
@@ -45,10 +46,6 @@ public class CameraControl : MonoBehaviour
         if (z != 0)
         {
             zoom = Mathf.Clamp(zoom - z * m_baseZoomSpeed * zoomMultiplier, minZoom, maxZoom);
-            transform.Translate(Vector3.forward * z * m_baseZoomSpeed * zoomMultiplier);
-
-            // set a new offset
-            m_offset = transform.position - target.position;
 
             if (debug)
                 Debug.Log("Camera zoomed to: " + transform.position);
@@ -59,6 +56,8 @@ public class CameraControl : MonoBehaviour
         {
             transform.position = target.position + m_offset;
         }
+
+        this.transform.position = target.position + refPoint.position * zoom;
 
         transform.LookAt(target);
     }
