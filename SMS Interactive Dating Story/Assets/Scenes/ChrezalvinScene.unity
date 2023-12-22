@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyDisplay: {fileID: 992530631}
+  heartSlider: {fileID: 795475869}
 --- !u!1001 &114763944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3471,6 +3472,8 @@ MonoBehaviour:
   stuff: []
   money: 1000000
   uiController: {fileID: 100286373}
+  maxHeart: 100
+  currentHeart: 20
 --- !u!1001 &781751784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3768,9 +3771,9 @@ RectTransform:
   - {fileID: 938917541}
   m_Father: {fileID: 1194601615}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 282.67, y: 113}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -25, y: -25}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &795475869
@@ -3820,7 +3823,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.991
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6360,12 +6363,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7b578138b1270954ab31878716b1e260, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ef17944b99cee841ab53b642f56e169, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.991
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
