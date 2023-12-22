@@ -31,6 +31,11 @@ public class UIController : MonoBehaviour
         timeDisplay.text = format;
     }
 
+    public void GameOver()
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
