@@ -14,26 +14,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - name: Aldo
-    dialogue: Hallo
+    dialogue: Haloo
     animationParam: 
   - name: Anya
-    dialogue: Hai hai
+    dialogue: Hi
     animationParam: 
   - name: Aldo
-    dialogue: Masih kenal aku nggak? Aku Aldo dari kelas semester lalu
+    dialogue: 'Boleh follback gaa?
+
+'
     animationParam: 
   - name: Anya
-    dialogue: Oooh ini aldo?? Kukira siapa
+    dialogue: Boleeeh (0///0)
+    animationParam: 
+  - name: Aldo
+    dialogue: 'Hahaha kamu angkatan 2022 yaa?
+
+'
     animationParam: 
   - name: Anya
-    dialogue: Apa kabar do ^_^?
+    dialogue: 'Iyaa
+
+'
     animationParam: 
   - name: Aldo
-    dialogue: Baik ^_^
+    dialogue: 'Salam kenal yaa aku Aldo
+
+'
+    animationParam: 
+  - name: Anya
+    dialogue: 'Iyaa salam kenal jugaa
+
+'
+    animationParam: 
+  - name: Anya
+    dialogue: 'Btw Aldo angkatan berapaa?
+
+'
     animationParam: 
   - name: Aldo
-    dialogue: cool
+    dialogue: 'Aku angkatan 2020
+
+'
+    animationParam: 
+  - name: Aldo
+    dialogue: 'Btw kaki kamu lagi sakit ga?
+
+'
+    animationParam: 
+  - name: Anya
+    dialogue: 'Hahahah kenapaa, engga kokk bisa jalan inii
+
+'
+    animationParam: 
+  - name: Aldo
+    dialogue: Nahh pas banget nih, aku mau ajak kamu jalan. Kamu mau gaa?
+    animationParam: 
+  - name: Anya
+    dialogue: 'mauu gaa yaa?
+
+'
+    animationParam: 
+  - name: Anya
+    dialogue: 'Mau kemanaaa?
+
+'
+    animationParam: 
+  - name: Aldo
+    dialogue: 'Kita jalan jalan santai ajaa ke SMS mauu?
+
+'
+    animationParam: 
+  - name: Anya
+    dialogue: 'Wahh kebetulan banget akuu juga lagi mau kesanaa
+
+'
     animationParam: special
   - name: Aldo
-    dialogue: cool
-    animationParam: special
+    dialogue: 'Yaudaa nanti akuu jemput yaa?
+
+'
+    animationParam: 
+  - name: Anya
+    dialogue: Akuu kesana sendiri ajaa gapapaa tinggal jalan kok ini deket
+    animationParam: 
+  - name: Aldo
+    dialogue: 'Benerann? nnti capek gaa?
+
+'
+    animationParam: 
+  - name: Anya
+    dialogue: 'Iyaa benerann santai ajaa
+
+'
+    animationParam: 
+  - name: Aldo
+    dialogue: Okayy nnti kita ketemuan jam 3 sore yaa?
+    animationParam: 
+  - name: Anya
+    dialogue: "Okayy, see you\_theree (^_^)/"
+    animationParam: 

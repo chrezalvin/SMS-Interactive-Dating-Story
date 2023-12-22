@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
@@ -9,6 +10,19 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI moneyDisplay;
     public Slider heartSlider;
     public TextMeshProUGUI timeDisplay;
+
+    public int badEndingId = 3;
+    public int goodEndingId = 4;
+
+    public void GotoGoodEnding()
+    {
+        SceneManager.LoadScene(goodEndingId);
+    }
+
+    public void GotoBadEnding()
+    {
+        SceneManager.LoadScene(badEndingId);
+    }
 
     public void UpdateHeartDisplay(float currentHeart, float maxHeart)
     {
@@ -29,11 +43,6 @@ public class UIController : MonoBehaviour
         int minute = System.DateTime.Now.Minute;
         string format = string.Format("{0:00}:{1:00} {2}", hour, minute, hour < 12 ? "AM" : "PM");
         timeDisplay.text = format;
-    }
-
-    public void GameOver()
-    {
-
     }
 
     // Start is called before the first frame update

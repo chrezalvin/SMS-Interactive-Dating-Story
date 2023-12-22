@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abbc957350915974dac0311140409125, type: 3}
-  m_Name: DialogAnak2
+  m_Name: NPCTip
   m_EditorClassIdentifier: 
   dialogueLines:
-  - name: Anak-anak
-    dialogue: Mobilnya bagus
-    animationParam: 
-  - name: Anak-anak
-    dialogue: tapi aku lebih suka mobil kuning
+  - name: Papan
+    dialogue: Klik pada pengunjung mall untuk berinteraksi
     animationParam: 

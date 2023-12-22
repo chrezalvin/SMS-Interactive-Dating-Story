@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbc957350915974dac0311140409125, type: 3}
+  m_Name: GoodEndingChat
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - name: Anya
+    dialogue: Aldo kemarin makasih yaa udah ngajak jalan
+    animationParam: 
+  - name: Aldo
+    dialogue: Iyaa, lain kali mau jalan lagi?
+    animationParam: 
+  - name: Anya
+    dialogue: Boleehh
+    animationParam: 
+  - name: Anya
+    dialogue: Lusa aku mau jalan ke SDC, mau ikut?
+    animationParam: 
+  - name: Aldo
+    dialogue: Ohh mauu
+    animationParam: special
+  - name: Anya
+    dialogue: Okee sampai ketemu lagi :)
+    animationParam: special
+  - name: Aldo
+    dialogue: Goodnight Anya
+    animationParam: 
+  - name: Anya
+    dialogue: Goodnightt
+    animationParam: 
