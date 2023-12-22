@@ -16,6 +16,12 @@ public class DialogueDisplayer : MonoBehaviour
     {
         if(!dialogueBox.activeSelf)
             DisplayDialogur(dialogueObject);
+    }    
+    
+    public void PlayDialogue(DialogueLine[] dialogueLines)
+    {
+        if(!dialogueBox.activeSelf)
+            DisplayDialogur(dialogueLines);
     }
 
     // dialogue object and callback
@@ -27,6 +33,26 @@ public class DialogueDisplayer : MonoBehaviour
             dialogueLabel.text = dialogueObject.dialogueLines[iii].name;
 
             callback.Invoke(dialogueObject.dialogueLines[iii]);
+
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(1));
+
+            // play audio
+            AudioSource.PlayClipAtPoint(dialogueSound, Camera.main.transform.position);
+
+            yield return null;
+        }
+
+        dialogueBox.SetActive(false);
+    }
+
+    public IEnumerator Dialogue(DialogueLine[] dialogueLines, Action<DialogueLine> callback)
+    {
+        for (int iii = 0; iii < dialogueLines.Length; ++iii)
+        {
+            dialogueText.text = dialogueLines[iii].dialogue;
+            dialogueLabel.text = dialogueLines[iii].name;
+
+            callback.Invoke(dialogueLines[iii]);
 
             yield return new WaitUntil(() => Input.GetMouseButtonDown(1));
 
@@ -55,11 +81,35 @@ public class DialogueDisplayer : MonoBehaviour
         }
 
         dialogueBox.SetActive(false);
+    }    
+    
+    private IEnumerator MoveThroughDialogue(DialogueLine[] dialogueLines)
+    {
+        for(int iii = 0; iii < dialogueLines.Length; ++iii)
+        {
+            dialogueText.text = dialogueLines[iii].dialogue;
+            dialogueLabel.text = dialogueLines[iii].name;
+
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(1));
+            
+            // play audio
+            AudioSource.PlayClipAtPoint(dialogueSound, Camera.main.transform.position);
+
+            yield return null;
+        }
+
+        dialogueBox.SetActive(false);
     }
 
     public void DisplayDialogur(DialogueObject dialogueObject)
     {
         dialogueBox.SetActive(true);
         StartCoroutine(MoveThroughDialogue(dialogueObject));
+    }    
+    
+    public void DisplayDialogur(DialogueLine[] dialogueLines)
+    {
+        dialogueBox.SetActive(true);
+        StartCoroutine(MoveThroughDialogue(dialogueLines));
     }
 }

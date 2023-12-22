@@ -6,7 +6,7 @@ using UnityEngine;
 public class EscalatorScript : MonoBehaviour
 {
     public GameObject player;
-    private bool isLevitating = false;
+    public bool isLevitating = false;
 
     private Animator animator;
 
