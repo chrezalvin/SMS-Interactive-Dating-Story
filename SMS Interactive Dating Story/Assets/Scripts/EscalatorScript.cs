@@ -35,7 +35,6 @@ public class EscalatorScript : MonoBehaviour
         {
             // make player child of escalator
             collision.transform.SetParent(transform, true);
-            collision.transform.localScale = new Vector3(1/transform.localScale.x, 1/transform.localScale.y, 1/transform.localScale.z);
 
             //player.transform.parent = this.transform;
             //player.transform.SetParent(transform, false);
@@ -44,20 +43,13 @@ public class EscalatorScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.collider.CompareTag("Player"))
-        {
-            collision.transform.localScale = new Vector3(1 / transform.localScale.x, 1 / transform.localScale.y, 1 / transform.localScale.z);
-        }
-    }
-
     private void OnCollisionExit(Collision collision)
     {
         if(collision.collider.CompareTag("Player"))
         {
             // make player no longer child of escalator
-            player.transform.SetParent(null, false);
+            player.transform.SetParent(null, true);
+            animator.SetBool("isLevitating", ToggleLevitation());
             //player.transform.parent = null;
         }
     }

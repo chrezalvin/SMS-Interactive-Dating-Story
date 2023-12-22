@@ -10,6 +10,8 @@ public class HintDialogue : MonoBehaviour
     public DialogueObject dialogueObject;
     public DialogueDisplayer dialogueDisplayer;
 
+    public AudioClip audioOnDestroy = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,15 @@ public class HintDialogue : MonoBehaviour
             // highlight this cube
             Debug.Log("Player entered NPC trigger");
 
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // play audio
+        if (audioOnDestroy != null)
+        {
+            AudioSource.PlayClipAtPoint(audioOnDestroy, Camera.main.transform.position);
         }
     }
 }

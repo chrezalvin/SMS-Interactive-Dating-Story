@@ -22,6 +22,12 @@ public class NPCScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("Player clicked NPC");
+            StartCoroutine(dialogueDisplayer.Dialogue(dialogueObject, (dialogueLine) =>
+            {
+                Debug.Log("Playing animation: " + dialogueLine.animationParam);
+                animator.SetTrigger(dialogueLine.animationParam);
+            }));
             dialogueDisplayer.PlayDialogue(dialogueObject);
         }
     }
