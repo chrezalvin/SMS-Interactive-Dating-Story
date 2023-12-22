@@ -8,25 +8,10 @@ public class PlayerStuff : MonoBehaviour
     [SerializeField] private int money = 100000;
     [SerializeField] private UIController uiController;
 
-    [SerializeField] private float maxHeart = 100f;
-    [SerializeField] private float currentHeart = 20f;
-
     [SerializeField] private int startHour = 8;
     [SerializeField] private int endHour = 22;
 
     private int currentHour = 8;
-
-    public void UpdateHeart(float amount)
-    {
-        currentHeart += amount;
-        currentHeart = Mathf.Clamp(currentHeart, 0f, maxHeart);
-        uiController.UpdateHeartDisplay(currentHeart, maxHeart);
-    }
-
-    public float GetHeart()
-    {
-        return currentHeart;
-    }
 
     public void AddItem(Item item)
     {
@@ -72,7 +57,6 @@ public class PlayerStuff : MonoBehaviour
     void Start()
     {
         uiController.UpdateMoneyDisplay(money);
-        uiController.UpdateHeartDisplay(currentHeart, maxHeart);
         uiController.UpdateTimeDisplay(currentHour);
     }
 

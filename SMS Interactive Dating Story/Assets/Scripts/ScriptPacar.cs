@@ -8,13 +8,39 @@ public class ScriptPacar : MonoBehaviour
     [SerializeField] private UIController uiController;
     [SerializeField] private Animator animator;
     public float minDistance = 1f;
-    public int statisfaction = 20;
 
+    [SerializeField] private float maxHeart = 100f;
+    [SerializeField] private float currentHeart = 20f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        uiController.UpdateHeartDisplay(currentHeart, maxHeart);
+    }
+
+    public void IncreaseHeart(float amount)
+    {
+        currentHeart += amount;
+        currentHeart = Mathf.Clamp(currentHeart, 0f, maxHeart);
+        uiController.UpdateHeartDisplay(currentHeart, maxHeart);
+    }
+
+    public void ReduceHeart(float amount)
+    {
+        currentHeart -= amount;
+        currentHeart = Mathf.Clamp(currentHeart, 0f, maxHeart);
+        uiController.UpdateHeartDisplay(currentHeart, maxHeart);
+
+        if(currentHeart <= 0f)
+        {
+            // game over
+            uiController.GameOver();
+        }
+    }
+
+    public float GetHeart()
+    {
+        return currentHeart;
     }
 
     // Update is called once per frame
