@@ -26,10 +26,13 @@ MonoBehaviour:
     dialogue: Oooh ini aldo?? Kukira siapa
     animationParam: 
   - name: Anya
-    dialogue: Masih kenal ^_^. Apa kabar do?
+    dialogue: Apa kabar do ^_^?
     animationParam: 
-  - name: Anya
-    dialogue: Masih kenal ^_^. Apa kabar do?
+  - name: Aldo
+    dialogue: Baik ^_^
+    animationParam: 
+  - name: Aldo
+    dialogue: cool
     animationParam: special
   - name: Aldo
     dialogue: cool
